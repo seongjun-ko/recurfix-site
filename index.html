@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>리커픽스 — 공간관리 파트너 | 유지보수·인테리어·시설운영 컨설팅</title>
+<meta name="description" content="부르는 업체가 아니라 곁에 두는 파트너. 기업 공간의 유지보수, 인테리어, 시설운영 컨설팅을 직영팀이 책임지고 시공합니다. 서울·경기.">
+<meta property="og:title" content="리커픽스 — 공간관리 파트너">
+<meta property="og:description" content="유지보수부터 인테리어, 시설운영 컨설팅까지. 기업 공간을 함께 돌보는 파트너.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A0A0D">
+<link rel="canonical" href="https://recurfix.co.kr/">
+<meta property="og:url" content="https://recurfix.co.kr/">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"NanumSquareNeo";src:url("assets/fonts/NanumSquareNeo-Lt.woff2") format("woff2");font-weight:300;font-display:swap;}
+@font-face{font-family:"NanumSquareNeo";src:url("assets/fonts/NanumSquareNeo-Rg.woff2") format("woff2");font-weight:400 500;font-display:swap;}
+@font-face{font-family:"NanumSquareNeo";src:url("assets/fonts/NanumSquareNeo-Bd.woff2") format("woff2");font-weight:600 700;font-display:swap;}
+@font-face{font-family:"NanumSquareNeo";src:url("assets/fonts/NanumSquareNeo-Eb.woff2") format("woff2");font-weight:800;font-display:swap;}
+@font-face{font-family:"NanumSquareNeo";src:url("assets/fonts/NanumSquareNeo-Hv.woff2") format("woff2");font-weight:900;font-display:swap;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#0A0A0D;color:#0A0A0D;font-family:"NanumSquareNeo","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+a{color:inherit;text-decoration:none;}
+a:hover{color:inherit;}
+img{display:block;}
+::selection{background:#242EBF;color:#FFFFFF;}
+@keyframes rcf-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+</style>
+
+<style>.rcf-h1:hover{color:#FFFFFF;}
+.rcf-h2:hover{color:#FFFFFF;}
+.rcf-h3:hover{background:#1B23A0;}
+.rcf-h4:hover{background:#1B23A0;}
+.rcf-h5:hover{background:#1B23A0;}
+.rcf-h6:hover{color:#FFFFFF;}
+.rcf-h7:hover{color:#FFFFFF;}
+.rcf-h8:hover{transform:scale(1.06);background:#1B23A0;}
+.rcf-h9:hover{color:#FFFFFF;}
+.rcf-h10:hover{background:#1B23A0;}</style>
+</head>
+<body>
+
+
+
+<div style="background:#F1F1F4;">
+
+  <!-- ============ HEADER ============ -->
+  <header data-screen-label="헤더" style="position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(20px,4vw,48px);background:rgba(10,10,13,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(241,241,244,0.08);">
+    <a href="#top" style="display:flex;align-items:center;">
+      <img src="assets/logo-white.png" alt="RECURFIX" style="height:16px;width:auto;">
+    </a>
+    <nav style="display:flex;align-items:center;gap:clamp(14px,2.5vw,28px);">
+      <a href="#services" style="color:rgba(241,241,244,0.75);font-size:13.5px;font-weight:600;" data-rcf-hover class="rcf-h1">서비스</a>
+      <a href="#works" style="color:rgba(241,241,244,0.75);font-size:13.5px;font-weight:600;" data-rcf-hover class="rcf-h2">시공사례</a>
+      <button onclick="rcfModal(true)" style="display:inline-flex;align-items:center;gap:8px;background:#242EBF;color:#FFFFFF;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;transition:background .2s;" data-rcf-hover class="rcf-h3">문의하기</button>
+    </nav>
+  </header>
+
+  <!-- ============ 1. HERO ============ -->
+  <section id="top" data-screen-label="히어로" style="position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;background:#0A0A0D;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:linear-gradient(160deg,#0E0E14 0%,#0A0A0D 60%);"></div>
+    <div style="position:absolute;top:50%;right:max(-120px,-9vw);width:clamp(80px,11vw,150px);height:150vh;border-left:1.5px solid rgba(139,147,255,0.5);border-right:1.5px solid rgba(139,147,255,0.5);transform:translateY(-50%) rotate(38deg);"></div>
+    <div style="position:absolute;top:50%;right:max(-120px,-9vw);width:clamp(80px,11vw,150px);height:150vh;border-left:1.5px solid rgba(139,147,255,0.5);border-right:1.5px solid rgba(139,147,255,0.5);transform:translateY(-50%) rotate(-38deg);"></div>
+    <div style="position:absolute;top:50%;right:max(-40px,-3vw);width:clamp(80px,11vw,150px);height:150vh;background:#242EBF;transform:translateY(-50%) rotate(38deg);opacity:0.9;"></div>
+    <p style="position:absolute;top:96px;left:clamp(20px,4vw,48px);margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;color:rgba(241,241,244,0.4);">LONG-TERM PARTNERSHIP, NOT ONE-TIME CALL</p>
+    <div style="position:relative;max-width:1160px;width:100%;margin:0 auto;padding:140px clamp(20px,4vw,48px) clamp(56px,8vh,96px);box-sizing:border-box;">
+      <p data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 20px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:clamp(12px,1.4vw,14px);letter-spacing:0.14em;color:#8B93FF;font-weight:500;">RECURFIX — 공간관리 파트너</p>
+      <h1 data-reveal="" data-reveal-delay="120" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 24px;color:#F1F1F4;font-size:clamp(34px,6.4vw,76px);line-height:1.16;font-weight:900;letter-spacing:-0.02em;text-wrap:balance;">부르는 업체가 아니라,<br>곁에 두는 파트너</h1>
+      <p data-reveal="" data-reveal-delay="240" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 36px;max-width:560px;color:rgba(241,241,244,0.78);font-size:clamp(15px,1.8vw,18px);line-height:1.7;font-weight:500;">일이 터졌을 때만 찾는 업체가 아닌,<br>공간 운영의 처음부터 함께하는 관리 파트너입니다.</p>
+      <div data-reveal="" data-reveal-delay="360" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:flex;flex-wrap:wrap;gap:12px;">
+        <button onclick="rcfModal(true)" style="display:inline-flex;align-items:center;gap:14px;background:#242EBF;color:#FFFFFF;font-weight:800;font-size:clamp(15px,1.7vw,17px);padding:18px 36px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;transition:background .2s;" data-rcf-hover class="rcf-h4"><span>서비스 문의하기</span><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;opacity:0.75;">→</span></button>
+      </div>
+      <p data-reveal="" data-reveal-delay="480" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:48px 0 0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;line-height:2;color:rgba(241,241,244,0.45);">Interior · Maintenance · PM<br>Corporate Space Solutions</p>
+    </div>
+  </section>
+
+  <!-- ============ NUMBERS TICKER ============ -->
+  <div data-screen-label="실적 티커" style="background:#0A0A0D;overflow:hidden;padding:17px 0;border-top:1px solid rgba(241,241,244,0.1);border-bottom:1px solid rgba(241,241,244,0.1);">
+    <div data-marquee-track="" style="display:flex;width:max-content;animation:rcf-marquee 40s linear infinite;">
+      <div style="display:flex;align-items:center;gap:36px;padding-right:36px;">
+        <span data-om-id="cc34308e:40" style="display: inline-flex; align-items: baseline; gap: 10px; white-space: nowrap;"><span data-om-id="cc34308e:41" style="font-family: &quot;IBM Plex Mono&quot;, ui-monospace, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: rgb(139, 147, 255);">15만평+</span><span data-om-id="cc34308e:42" style="font-size: 13.5px; font-weight: 700; color: rgba(241, 241, 244, 0.85);">반복거래 누적 관리면적</span></span><span data-om-id="cc34308e:43" style="color: rgba(241, 241, 244, 0.22); font-size: 12px;">/</span>
+        <span data-om-id="cc34308e:44" style="display: inline-flex; align-items: baseline; gap: 10px; white-space: nowrap;"><span data-om-id="cc34308e:45" style="font-family: &quot;IBM Plex Mono&quot;, ui-monospace, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: rgb(139, 147, 255);">30개사+</span><span data-om-id="cc34308e:46" style="font-size: 13.5px; font-weight: 700; color: rgba(241, 241, 244, 0.85);">고객사 반복거래 진행</span></span><span data-om-id="cc34308e:47" style="color: rgba(241, 241, 244, 0.22); font-size: 12px;">/</span>
+        <span data-om-id="cc34308e:48" style="display: inline-flex; align-items: baseline; gap: 10px; white-space: nowrap;"><span data-om-id="cc34308e:49" style="font-family: &quot;IBM Plex Mono&quot;, ui-monospace, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: rgb(139, 147, 255);">10년+</span><span data-om-id="cc34308e:50" style="font-size: 13.5px; font-weight: 700; color: rgba(241, 241, 244, 0.85);">시공 경력</span></span><span data-om-id="cc34308e:51" style="color: rgba(241, 241, 244, 0.22); font-size: 12px;">/</span>
+        <span data-om-id="cc34308e:52" style="display: inline-flex; align-items: baseline; gap: 10px; white-space: nowrap;"><span data-om-id="cc34308e:53" style="font-family: &quot;IBM Plex Mono&quot;, ui-monospace, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: rgb(139, 147, 255);">1,000건+</span><span data-om-id="cc34308e:54" style="font-size: 13.5px; font-weight: 700; color: rgba(241, 241, 244, 0.85);">누적 거래</span></span><span data-om-id="cc34308e:55" style="color: rgba(241, 241, 244, 0.22); font-size: 12px;">/</span>
+      </div>
+      <div aria-hidden="true" style="display:flex;align-items:center;gap:36px;padding-right:36px;">
+        <span style="display:inline-flex;align-items:baseline;gap:10px;white-space:nowrap;"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;font-weight:600;letter-spacing:0.02em;color:#8B93FF;">15만평+</span><span style="font-size:13.5px;font-weight:700;color:rgba(241,241,244,0.85);">반복거래 누적 관리면적</span></span><span style="color:rgba(241,241,244,0.22);font-size:12px;">/</span>
+        <span style="display:inline-flex;align-items:baseline;gap:10px;white-space:nowrap;"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;font-weight:600;letter-spacing:0.02em;color:#8B93FF;">30개사+</span><span style="font-size:13.5px;font-weight:700;color:rgba(241,241,244,0.85);">고객사 반복거래 진행</span></span><span style="color:rgba(241,241,244,0.22);font-size:12px;">/</span>
+        <span style="display:inline-flex;align-items:baseline;gap:10px;white-space:nowrap;"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;font-weight:600;letter-spacing:0.02em;color:#8B93FF;">10년+</span><span style="font-size:13.5px;font-weight:700;color:rgba(241,241,244,0.85);">시공 경력</span></span><span style="color:rgba(241,241,244,0.22);font-size:12px;">/</span>
+        <span style="display:inline-flex;align-items:baseline;gap:10px;white-space:nowrap;"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;font-weight:600;letter-spacing:0.02em;color:#8B93FF;">1,000건+</span><span style="font-size:13.5px;font-weight:700;color:rgba(241,241,244,0.85);">누적 거래</span></span><span style="color:rgba(241,241,244,0.22);font-size:12px;">/</span>
+        <span style="display:inline-flex;align-items:baseline;gap:10px;white-space:nowrap;"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;color:rgba(241,241,244,0.5);">SEOUL / GYEONGGI</span></span><span style="color:rgba(241,241,244,0.22);font-size:12px;">/</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 2. WHY RECURFIX ============ -->
+  <section data-screen-label="Why Recurfix" style="background:#F1F1F4;padding:clamp(80px,11vw,150px) 0;">
+    <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px);box-sizing:border-box;">
+      <p data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.14em;color:#242EBF;font-weight:600;">01 — WHY RECURFIX</p>
+      <h2 data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 clamp(40px,6vw,64px);font-size:clamp(26px,4.2vw,46px);line-height:1.28;font-weight:900;letter-spacing:-0.02em;color:#0A0A0D;text-wrap:balance;">공간관리는 왜<br>항상 번거로울까요?</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:20px;">
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:32px 28px;">
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.1em;color:rgba(10,10,13,0.35);">PROBLEM 01</p>
+          <h3 style="margin:0 0 12px;font-size:19px;font-weight:800;color:#0A0A0D;">업체 파편화</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(10,10,13,0.6);font-weight:500;">전기는 A업체, 목공은 B업체, 도장은 C업체. 업체를 관리하는 일이 담당자의 또 다른 업무가 됩니다.</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="120" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:32px 28px;">
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.1em;color:rgba(10,10,13,0.35);">PROBLEM 02</p>
+          <h3 style="margin:0 0 12px;font-size:19px;font-weight:800;color:#0A0A0D;">뭉뚱그린 견적</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(10,10,13,0.6);font-weight:500;">간편 견적은 빠르지만 항목이 뭉뚱그려져 있어, 내부 보고와 비용 검증이 어렵습니다.</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="240" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:32px 28px;">
+          <p style="margin:0 0 14px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.1em;color:rgba(10,10,13,0.35);">PROBLEM 03</p>
+          <h3 style="margin:0 0 12px;font-size:19px;font-weight:800;color:#0A0A0D;">느린 소통</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(10,10,13,0.6);font-weight:500;">영업 담당 → 본사 → 협력업체 → 기사님. 전달만 며칠, 시공은 그 다음입니다.</p>
+        </div>
+      </div>
+      <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#242EBF;border-radius:20px;padding:clamp(36px,5vw,56px) clamp(28px,4vw,56px);">
+        <p style="margin:0 0 12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.14em;color:rgba(255,255,255,0.6);">OUR ANSWER</p>
+        <h3 style="margin:0 0 32px;font-size:clamp(22px,3vw,32px);font-weight:900;color:#FFFFFF;letter-spacing:-0.01em;">리커픽스는 다르게 일합니다</h3>
+        <div style="border-top:2px solid rgba(255,255,255,0.35);padding-top:20px;max-width:760px;">
+          <h4 style="margin:0 0 10px;font-size:18px;font-weight:800;color:#FFFFFF;">책임시공</h4>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(255,255,255,0.82);font-weight:500;">일상 보수와 중소규모 공사는 직영팀이 직접 시공합니다. 대형 인테리어·원상복구는 검증된 전문팀과 함께하되, <br>견적·품질·완료보고는 리커픽스가 끝까지 책임집니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. USP ============ -->
+  <section data-screen-label="USP 4가지" style="background:#F1F1F4;padding:0 0 clamp(80px,11vw,150px);">
+    <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px);box-sizing:border-box;">
+      <p data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.14em;color:#242EBF;font-weight:600;">02 — WHAT MAKES US DIFFERENT</p>
+      <h2 data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 clamp(40px,6vw,64px);font-size:clamp(26px,4.2vw,46px);line-height:1.28;font-weight:900;letter-spacing:-0.02em;color:#0A0A0D;">리커픽스가 일하는 기준</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:16px;">
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border-top:3px solid #242EBF;border-radius:14px;padding:32px 28px;">
+          <p style="margin:0 0 40px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:15px;font-weight:600;color:#242EBF;">01</p>
+          <h3 style="margin:0 0 12px;font-size:19px;font-weight:800;color:#0A0A0D;">다기능 직영팀</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(10,10,13,0.6);font-weight:500;">목공·도장·전기·설비까지, 한 팀이 여러 공정을 처리합니다. 업체 여러 곳을 부를 일이 줄어듭니다.</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border-top:3px solid #242EBF;border-radius:14px;padding:32px 28px;">
+          <p style="margin:0 0 40px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:15px;font-weight:600;color:#242EBF;">02</p>
+          <h3 style="margin:0 0 12px;font-size:19px;font-weight:800;color:#0A0A0D;">전공정 시공 장비 보유</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(10,10,13,0.6);font-weight:500;">대표가 현장에서 직접 관리·시공하고, 전문 장비를 자체 보유해 외부 임대 없이 즉시 투입합니다.</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="200" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border-top:3px solid #242EBF;border-radius:14px;padding:32px 28px;">
+          <p style="margin:0 0 40px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:15px;font-weight:600;color:#242EBF;">03</p>
+          <h3 style="margin:0 0 12px;font-size:19px;font-weight:800;color:#0A0A0D;">투명한 견적</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(10,10,13,0.6);font-weight:500;">자재비와 인건비를 항목별로 공개합니다. 불필요한 간접비는 처음부터 청구하지 않습니다.</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="300" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border-top:3px solid #242EBF;border-radius:14px;padding:32px 28px;">
+          <p style="margin:0 0 40px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:15px;font-weight:600;color:#242EBF;">04</p>
+          <h3 style="margin:0 0 12px;font-size:19px;font-weight:800;color:#0A0A0D;">빠른 소통</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(10,10,13,0.6);font-weight:500;">담당자 한 명과 처음부터 끝까지. 접수 당일 응대, 일정 확정, 완료보고까지 한 채널로 끝냅니다.</p>
+        </div>
+      </div>
+      <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+        <div>
+          <div style="width:100%;height:clamp(200px,22vw,280px);"><div style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:14px;"><img src="assets/img/opt-equip.webp" alt="보유 장비 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+          <p style="margin:12px 2px 0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;color:rgba(10,10,13,0.45);">EQUIPMENT — 전문 장비 자체 보유</p>
+        </div>
+        <div>
+          <div style="width:100%;height:clamp(200px,22vw,280px);"><div style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:14px;"><img src="assets/img/opt-onsite.webp" alt="시공 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+          <p style="margin:12px 2px 0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;color:rgba(10,10,13,0.45);">ON-SITE — 대표자 직접 시공 현장</p>
+        </div>
+        <div>
+          <div style="width:100%;height:clamp(200px,22vw,280px);"><div style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:14px;"><img src="assets/img/opt-team.webp" alt="직영팀 작업 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+          <p style="margin:12px 2px 0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;color:rgba(10,10,13,0.45);">TEAM — 직영팀</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. SERVICES ============ -->
+  <section id="services" data-screen-label="서비스 7종" style="background:#0A0A0D;padding:clamp(80px,11vw,150px) 0;">
+    <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px);box-sizing:border-box;">
+      <p data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.14em;color:#8B93FF;font-weight:600;">03 — SERVICES</p>
+      <h2 data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 clamp(48px,6vw,72px);font-size:clamp(26px,4.2vw,46px);line-height:1.28;font-weight:900;letter-spacing:-0.02em;color:#F1F1F4;text-wrap:balance;">유지보수부터 인테리어까지,<br data-om-id="f99af679:139">공간의 전 주기를 함께합니다</h2>
+      <div style="display:flex;flex-direction:column;gap:clamp(40px,5vw,64px);">
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(20px,3vw,48px);align-items:center;">
+          <div>
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;color:#8B93FF;">SVC-01</p>
+            <h3 style="margin:0 0 14px;font-size:clamp(21px,2.6vw,28px);font-weight:800;color:#F1F1F4;">시설 유지보수</h3>
+            <p style="margin:0;font-size:15px;line-height:1.75;color:rgba(241,241,244,0.65);font-weight:500;">건물 관리 전문 경력으로 누수·전기·도장·마감 하자 등 일상 보수를 효율적으로 진행합니다.&nbsp;</p>
+          </div>
+          <div style="width:100%;height:clamp(220px,26vw,320px);"><div style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:14px;"><img src="assets/img/svc-01.webp" alt="시설 유지보수 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(20px,3vw,48px);align-items:center;direction:rtl;">
+          <div style="direction:ltr;">
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;color:#8B93FF;">SVC-02</p>
+            <h3 style="margin:0 0 14px;font-size:clamp(21px,2.6vw,28px);font-weight:800;color:#F1F1F4;">단종 공사</h3>
+            <p style="margin:0;font-size:15px;line-height:1.75;color:rgba(241,241,244,0.65);font-weight:500;">목공·도장·바닥·전기 등 단일 공정 공사를 필요한 만큼만 시공합니다. 매번 다른 업체를 연락하는 피로도를 줄여보세요.</p>
+          </div>
+          <div style="width:100%;height:clamp(220px,26vw,320px);direction:ltr;"><div style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:14px;"><img src="assets/img/svc-02.webp" alt="단종 공사 현장 사진" loading="lazy" data-rcf-view data-s="1" data-x="0" data-y="-2.8125" style="position:absolute;left:50%;top:47.1875%;transform:translate(-50%,-50%);width:100%;height:100%;object-fit:cover;"></div></div>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(20px,3vw,48px);align-items:center;">
+          <div>
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;color:#8B93FF;">SVC-03</p>
+            <h3 style="margin:0 0 14px;font-size:clamp(21px,2.6vw,28px);font-weight:800;color:#F1F1F4;">부분환경개선공사</h3>
+            <p style="margin:0;font-size:15px;line-height:1.75;color:rgba(241,241,244,0.65);font-weight:500;">도장·바닥·조명 교체 등 이용중인 공용부와 업무공간 내 공사도 문제 없이 진행합니다. 호텔·병원·사옥 시공팀의 애티튜드를 경험해보세요.</p>
+          </div>
+          <div style="width:100%;height:clamp(220px,26vw,320px);"><div style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:14px;"><img src="assets/img/svc-03.webp" alt="부분환경개선 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(20px,3vw,48px);align-items:center;direction:rtl;">
+          <div style="direction:ltr;">
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;color:#8B93FF;">SVC-04</p>
+            <h3 style="margin:0 0 14px;font-size:clamp(21px,2.6vw,28px);font-weight:800;color:#F1F1F4;">인테리어 시공</h3>
+            <p style="margin:0;font-size:15px;line-height:1.75;color:rgba(241,241,244,0.65);font-weight:500;">벽체 신설, 패널·마감, 가구 제작까지. 입주와 공간 개편 일정에 맞춘 시공을 리커픽스가 책임집니다.</p>
+          </div>
+          <div style="width:100%;height:clamp(220px,26vw,320px);direction:ltr;"><div style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:14px;"><img src="assets/img/svc-04.webp" alt="인테리어 시공 현장 사진" loading="lazy" data-rcf-view data-s="1" data-x="0" data-y="-12.5" style="position:absolute;left:50%;top:37.5%;transform:translate(-50%,-50%);width:100%;height:100%;object-fit:cover;"></div></div>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(20px,3vw,48px);align-items:center;">
+          <div>
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;color:#8B93FF;">SVC-05</p>
+            <h3 style="margin:0 0 14px;font-size:clamp(21px,2.6vw,28px);font-weight:800;color:#F1F1F4;">원상복구공사</h3>
+            <p style="margin:0;font-size:15px;line-height:1.75;color:rgba(241,241,244,0.65);font-weight:500;">임대차 종료 시점에 맞춘 원상복구. 철거부터 마감 복원까지, 복잡한 시설팀과의 소통을 리커픽스가 조율합니다.</p>
+          </div>
+          <div style="width:100%;height:clamp(220px,26vw,320px);"><div style="width:100%;height:100%;position:relative;overflow:hidden;border-radius:14px;"><img src="assets/img/svc-05.webp" alt="원상복구 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(20px,3vw,48px);align-items:center;direction:rtl;">
+          <div style="direction:ltr;">
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;color:#8B93FF;">SVC-06</p>
+            <h3 style="margin:0 0 14px;font-size:clamp(21px,2.6vw,28px);font-weight:800;color:#F1F1F4;">공간관리 컨설팅</h3>
+            <p style="margin:0;font-size:15px;line-height:1.75;color:rgba(241,241,244,0.65);font-weight:500;">운영 중인 공간의 유지관리 계획과 개선 우선순위를 함께 설계합니다. <br>반복되는 이슈의 원인부터 잡아 비용을 절감합니다.</p>
+          </div>
+          <div style="width:100%;height:clamp(240px,28vw,340px);direction:ltr;position:relative;">
+            <div style="position:absolute;top:14px;right:-6px;bottom:-12px;left:22px;background:rgba(139,147,255,0.10);border:1px solid rgba(139,147,255,0.22);border-radius:12px;transform:rotate(1.6deg);"></div>
+            <div style="position:absolute;top:0;right:10px;bottom:0;left:0;background:#FFFFFF;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,0.5);padding:clamp(16px,2.2vw,26px);display:flex;flex-direction:column;gap:clamp(10px,1.4vw,16px);overflow:hidden;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+                <div style="display:flex;flex-direction:column;gap:4px;">
+                  <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.16em;color:#242EBF;font-weight:600;">RECURFIX CONSULTING</p>
+                  <p style="margin:0;font-size:clamp(14px,1.6vw,17px);font-weight:800;color:#0A0A0D;">연간 유지관리 로드맵</p>
+                </div>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.1em;color:#FFFFFF;background:#242EBF;border-radius:5px;padding:5px 9px;font-weight:600;white-space:nowrap;">PLAN 2026</span>
+              </div>
+              <div style="height:1px;background:rgba(10,10,13,0.1);"></div>
+              <div style="display:grid;grid-template-columns:minmax(96px,118px) 1fr;column-gap:10px;row-gap:clamp(7px,1vw,11px);flex:1;align-content:center;">
+                <div></div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);">
+                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;color:rgba(10,10,13,0.4);">Q1</span>
+                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;color:rgba(10,10,13,0.4);">Q2</span>
+                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;color:rgba(10,10,13,0.4);">Q3</span>
+                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;color:rgba(10,10,13,0.4);">Q4</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;color:#FFFFFF;background:#242EBF;padding:2px 4px;font-weight:700;">P1</span><span style="font-size:11px;font-weight:700;color:#0A0A0D;white-space:nowrap;">공조·배관 정비</span></div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);align-items:center;background:repeating-linear-gradient(90deg,transparent,transparent calc(25% - 1px),rgba(10,10,13,0.08) calc(25% - 1px),rgba(10,10,13,0.08) 25%);"><div style="grid-column:1/3;height:10px;background:#242EBF;"></div></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;color:#242EBF;background:rgba(36,46,191,0.12);padding:2px 4px;font-weight:700;">P2</span><span style="font-size:11px;font-weight:700;color:#0A0A0D;white-space:nowrap;">조명·전기 효율화</span></div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);align-items:center;background:repeating-linear-gradient(90deg,transparent,transparent calc(25% - 1px),rgba(10,10,13,0.08) calc(25% - 1px),rgba(10,10,13,0.08) 25%);"><div style="grid-column:2/4;height:10px;background:#8B93FF;"></div></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;color:#242EBF;background:rgba(36,46,191,0.12);padding:2px 4px;font-weight:700;">P3</span><span style="font-size:11px;font-weight:700;color:#0A0A0D;white-space:nowrap;">마감·도장 보수</span></div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);align-items:center;background:repeating-linear-gradient(90deg,transparent,transparent calc(25% - 1px),rgba(10,10,13,0.08) calc(25% - 1px),rgba(10,10,13,0.08) 25%);"><div style="grid-column:3/4;height:10px;background:#C7CBFF;"></div></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:8.5px;color:#FFFFFF;background:#242EBF;padding:2px 4px;font-weight:700;">P1</span><span style="font-size:11px;font-weight:700;color:#0A0A0D;white-space:nowrap;">방수·외장 점검</span></div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);align-items:center;background:repeating-linear-gradient(90deg,transparent,transparent calc(25% - 1px),rgba(10,10,13,0.08) calc(25% - 1px),rgba(10,10,13,0.08) 25%);"><div style="grid-column:4/5;height:10px;background:#242EBF;"></div></div>
+              </div>
+              <div style="height:1px;background:rgba(10,10,13,0.1);"></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                <div style="display:flex;align-items:center;gap:12px;">
+                  <span style="display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:rgba(10,10,13,0.55);"><span style="width:8px;height:8px;background:#242EBF;display:inline-block;"></span>긴급</span>
+                  <span style="display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:rgba(10,10,13,0.55);"><span style="width:8px;height:8px;background:#8B93FF;display:inline-block;"></span>권장</span>
+                  <span style="display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;color:rgba(10,10,13,0.55);"><span style="width:8px;height:8px;background:#C7CBFF;display:inline-block;"></span>계획</span>
+                </div>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.08em;color:rgba(10,10,13,0.38);">산출물 예시</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(20px,3vw,48px);align-items:center;">
+          <div>
+            <p style="margin:0 0 12px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.12em;color:#8B93FF;">SVC-07 </p>
+            <h3 style="margin:0 0 14px;font-size:clamp(21px,2.6vw,28px);font-weight:800;color:#F1F1F4;">시설 점검 서비스</h3>
+            <p style="margin:0 0 14px;font-size:15px;line-height:1.75;color:rgba(241,241,244,0.65);font-weight:500;">인테리어 시설 전반적인 점검 후 시설 상태 보고서와 예상 비용을 제공합니다.&nbsp;<br>반기, 연간 단위의 수선비 예산을 편하게 잡아보세요.</p>
+            
+          </div>
+          <div style="width:100%;height:clamp(240px,28vw,340px);position:relative;">
+            <div style="position:absolute;top:14px;right:-6px;bottom:-12px;left:22px;background:rgba(139,147,255,0.10);border:1px solid rgba(139,147,255,0.22);border-radius:12px;transform:rotate(-1.4deg);"></div>
+            <div style="position:absolute;top:0;right:10px;bottom:0;left:0;background:#FFFFFF;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,0.5);padding:clamp(16px,2.2vw,26px);display:flex;flex-direction:column;gap:clamp(9px,1.2vw,14px);overflow:hidden;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">
+                <div style="display:flex;flex-direction:column;gap:4px;">
+                  <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.16em;color:#242EBF;font-weight:600;">RECURFIX INSPECTION</p>
+                  <p style="margin:0;font-size:clamp(14px,1.6vw,17px);font-weight:800;color:#0A0A0D;">정기점검 리포트</p>
+                </div>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.1em;color:#FFFFFF;background:#242EBF;border-radius:5px;padding:5px 9px;font-weight:600;white-space:nowrap;">NO. 26-041</span>
+              </div>
+              <div style="height:1px;background:rgba(10,10,13,0.1);"></div>
+              <div style="display:flex;flex-direction:column;flex:1;justify-content:center;gap:clamp(6px,0.9vw,10px);">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                  <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border:1.5px solid #242EBF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#242EBF;line-height:1;">✓</span><span style="font-size:11.5px;font-weight:700;color:#0A0A0D;">전기·조명 설비</span></div>
+                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.08em;color:#242EBF;border:1px solid rgba(36,46,191,0.35);padding:2px 7px;font-weight:700;white-space:nowrap;">정상</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                  <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border:1.5px solid #242EBF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#242EBF;line-height:1;">✓</span><span style="font-size:11.5px;font-weight:700;color:#0A0A0D;">배관·급배수</span></div>
+                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.08em;color:#FFFFFF;background:#242EBF;padding:3px 7px;font-weight:700;white-space:nowrap;">보수 필요</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                  <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border:1.5px solid #242EBF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#242EBF;line-height:1;">✓</span><span style="font-size:11.5px;font-weight:700;color:#0A0A0D;">벽면·바닥 마감재</span></div>
+                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.08em;color:#242EBF;background:rgba(36,46,191,0.12);padding:3px 7px;font-weight:700;white-space:nowrap;">관찰 권장</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                  <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border:1.5px solid #242EBF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#242EBF;line-height:1;">✓</span><span style="font-size:11.5px;font-weight:700;color:#0A0A0D;">도어·하드웨어</span></div>
+                  <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.08em;color:#242EBF;border:1px solid rgba(36,46,191,0.35);padding:2px 7px;font-weight:700;white-space:nowrap;">정상</span>
+                </div>
+              </div>
+              <div style="height:1px;background:rgba(10,10,13,0.1);"></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                <span style="font-size:10.5px;font-weight:700;color:rgba(10,10,13,0.6);">점검 12항목 · 보수 필요 1건 <span style="color:#242EBF;">예상 비용 포함</span></span>
+                <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;letter-spacing:0.08em;color:rgba(10,10,13,0.38);">산출물 예시</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. PROCESS ============ -->
+  <section data-screen-label="일하는 방식 3단계" style="background:#F1F1F4;padding:clamp(80px,11vw,150px) 0;">
+    <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px);box-sizing:border-box;">
+      <p data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.14em;color:#242EBF;font-weight:600;">04 — HOW WE WORK</p>
+      <h2 data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 clamp(40px,6vw,64px);font-size:clamp(26px,4.2vw,46px);line-height:1.28;font-weight:900;letter-spacing:-0.02em;color:#0A0A0D;">작게 시작해서, 길게 함께 갑니다</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:36px 30px;display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.12em;color:#242EBF;font-weight:600;">STEP 01</p>
+          <h3 style="margin:0;font-size:20px;font-weight:800;color:#0A0A0D;">유지보수 대응</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(10,10,13,0.6);font-weight:500;">작은 보수 요청, 시설 운영 고민 부터 상담하세요. 담당자 시설 운영 리소스가 확연하게 줄어듭니다.</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="130" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:36px 30px;display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.12em;color:#242EBF;font-weight:600;">STEP 02</p>
+          <h3 style="margin:0;font-size:20px;font-weight:800;color:#0A0A0D;">운영 컨설팅 · 소규모 공사</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(10,10,13,0.6);font-weight:500;">반복되는 이슈를 줄이는 환경개선공사와 유지관리 계획을 제안합니다.</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="260" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#0A0A0D;border-radius:16px;padding:36px 30px;display:flex;flex-direction:column;gap:14px;">
+          <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.12em;color:#8B93FF;font-weight:600;">STEP 03</p>
+          <h3 style="margin:0;font-size:20px;font-weight:800;color:#F1F1F4;">대형 인테리어 공사</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.75;color:rgba(241,241,244,0.65);font-weight:500;">신뢰가 쌓인 뒤, 층 단위 인테리어와 대규모 공사까지 맡기는 고객이 대부분입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. STATS ============ -->
+  <section data-screen-label="숫자 실적" style="position:relative;background:linear-gradient(160deg,#0E0E14 0%,#0A0A0D 60%);padding:clamp(80px,10vw,140px) 0;border-top:1px solid rgba(241,241,244,0.08);overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(36,46,191,0.14) 1px,transparent 1px),linear-gradient(90deg,rgba(36,46,191,0.14) 1px,transparent 1px);background-size:120px 120px;"></div>
+    <div style="position:relative;max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px);box-sizing:border-box;">
+      <p data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.14em;color:#8B93FF;font-weight:600;">RECURFIX IN NUMBERS</p>
+      <h2 data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 clamp(48px,6vw,72px);font-size:clamp(26px,4.2vw,46px);line-height:1.28;font-weight:900;letter-spacing:-0.02em;color:#F1F1F4;">신뢰는 숫자로 증명합니다</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(28px,4vw,56px);">
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);border-top:1px solid rgba(241,241,244,0.2);padding-top:24px;">
+          <p style="margin:0 0 18px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;color:rgba(241,241,244,0.4);">MANAGED AREA</p>
+          <p style="margin:0 0 12px;font-family:'NanumSquareNeo',sans-serif;font-size:clamp(44px,5.6vw,68px);font-weight:900;color:#F1F1F4;line-height:1;letter-spacing:-0.02em;"><span data-count="15">15</span><span style="font-family:'NanumSquareNeo',sans-serif;font-size:0.36em;font-weight:800;color:#8B93FF;margin-left:6px;">만평+</span></p>
+          <p style="margin:0;font-size:14.5px;color:rgba(241,241,244,0.7);font-weight:700;">반복 거래 누적 관리면적</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);border-top:1px solid rgba(241,241,244,0.2);padding-top:24px;">
+          <p style="margin:0 0 18px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;color:rgba(241,241,244,0.4);">REPEAT CLIENTS</p>
+          <p style="margin:0 0 12px;font-family:'NanumSquareNeo',sans-serif;font-size:clamp(44px,5.6vw,68px);font-weight:900;color:#F1F1F4;line-height:1;letter-spacing:-0.02em;"><span data-count="30">30</span><span style="font-family:'NanumSquareNeo',sans-serif;font-size:0.36em;font-weight:800;color:#8B93FF;margin-left:6px;">개사+</span></p>
+          <p style="margin:0;font-size:14.5px;color:rgba(241,241,244,0.7);font-weight:700;">고객사 반복거래 진행</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="200" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);border-top:1px solid rgba(241,241,244,0.2);padding-top:24px;">
+          <p style="margin:0 0 18px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;color:rgba(241,241,244,0.4);">EXPERIENCE</p>
+          <p style="margin:0 0 12px;font-family:'NanumSquareNeo',sans-serif;font-size:clamp(44px,5.6vw,68px);font-weight:900;color:#F1F1F4;line-height:1;letter-spacing:-0.02em;"><span data-count="10">10</span><span style="font-family:'NanumSquareNeo',sans-serif;font-size:0.36em;font-weight:800;color:#8B93FF;margin-left:6px;">년+</span></p>
+          <p style="margin:0;font-size:14.5px;color:rgba(241,241,244,0.7);font-weight:700;">시공 경력</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="300" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);border-top:1px solid rgba(241,241,244,0.2);padding-top:24px;">
+          <p style="margin:0 0 18px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;color:rgba(241,241,244,0.4);">TOTAL PROJECTS</p>
+          <p style="margin:0 0 12px;font-family:'NanumSquareNeo',sans-serif;font-size:clamp(44px,5.6vw,68px);font-weight:900;color:#F1F1F4;line-height:1;letter-spacing:-0.02em;"><span data-count="1000">1,000</span><span style="font-family:'NanumSquareNeo',sans-serif;font-size:0.36em;font-weight:800;color:#8B93FF;margin-left:6px;">건+</span></p>
+          <p style="margin:0;font-size:14.5px;color:rgba(241,241,244,0.7);font-weight:700;">누적 거래 (유지보수·인테리어·컨설팅)</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="400" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);border-top:1px solid rgba(241,241,244,0.2);padding-top:24px;">
+          <p style="margin:0 0 18px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;color:rgba(241,241,244,0.4);">REPEAT RATE</p>
+          <p style="margin:0 0 12px;font-family:'NanumSquareNeo',sans-serif;font-size:clamp(44px,5.6vw,68px);font-weight:900;color:#F1F1F4;line-height:1;letter-spacing:-0.02em;"><span data-count="90">90</span><span style="font-family:'NanumSquareNeo',sans-serif;font-size:0.36em;font-weight:800;color:#8B93FF;margin-left:6px;">%+</span></p>
+          <p style="margin:0;font-size:14.5px;color:rgba(241,241,244,0.7);font-weight:700;">첫 거래 고객, 열에 아홉은 재거래</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="500" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);border-top:1px solid rgba(241,241,244,0.2);padding-top:24px;">
+          <p style="margin:0 0 18px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.14em;color:rgba(241,241,244,0.4);">COMPLETION REPORT</p>
+          <p style="margin:0 0 12px;font-family:'NanumSquareNeo',sans-serif;font-size:clamp(44px,5.6vw,68px);font-weight:900;color:#F1F1F4;line-height:1;letter-spacing:-0.02em;"><span data-count="100">100</span><span style="font-family:'NanumSquareNeo',sans-serif;font-size:0.36em;font-weight:800;color:#8B93FF;margin-left:6px;">%</span></p>
+          <p style="margin:0;font-size:14.5px;color:rgba(241,241,244,0.7);font-weight:700;">모든 공사, 완료보고서로 마무리</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. CASES ============ -->
+  <section id="works" data-screen-label="시공 사례" style="background:#F1F1F4;padding:clamp(80px,11vw,150px) 0;">
+    <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px);box-sizing:border-box;">
+      <p data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.14em;color:#242EBF;font-weight:600;">05 — SELECTED WORKS</p>
+      <h2 data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 12px;font-size:clamp(26px,4.2vw,46px);line-height:1.28;font-weight:900;letter-spacing:-0.02em;color:#0A0A0D;">이렇게 일했습니다</h2>
+      <p data-reveal="" data-reveal-delay="160" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 clamp(40px,6vw,64px);font-size:14.5px;color:rgba(10,10,13,0.55);font-weight:500;">리커픽스가 관리하는 대표 현장 유형입니다.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;">
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="width:100%;height:240px;"><div style="width:100%;height:100%;position:relative;overflow:hidden;"><img src="assets/img/case-retail.webp" alt="매장 리뉴얼 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+          <div style="padding:24px 24px 28px;">
+            <p style="margin:0 0 12px;display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;color:#242EBF;background:rgba(36,46,191,0.08);border-radius:6px;padding:5px 10px;">RETAIL</p>
+            <h3 style="margin:0 0 10px;font-size:17.5px;font-weight:800;color:#0A0A0D;">매장 리뉴얼 공사</h3>
+            <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(10,10,13,0.6);font-weight:500;">오픈 일정에 맞춘 다기능 집중 시공으로 렌트프리 기간을 최소화하고, 오픈 일정에 정확히 맞춰 인도합니다.</p>
+          </div>
+        </div>
+        <div data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="width:100%;height:240px;"><div style="width:100%;height:100%;position:relative;overflow:hidden;"><img src="assets/img/case-office.webp" alt="오피스 환경개선 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+          <div style="padding:24px 24px 28px;">
+            <p style="margin:0 0 12px;display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;color:#242EBF;background:rgba(36,46,191,0.08);border-radius:6px;padding:5px 10px;">OFFICE</p>
+            <h3 style="margin:0 0 10px;font-size:17.5px;font-weight:800;color:#0A0A0D;">오피스 환경개선공사</h3>
+            <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(10,10,13,0.6);font-weight:500;">공간 운영에 필요한 레이아웃을 설계하고 조성합니다. 업무시간을 최대한 피해 구역별로 순차 시공합니다.</p>
+          </div>
+        </div>
+        <div data-reveal="" data-reveal-delay="200" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="width:100%;height:240px;"><div style="width:100%;height:100%;position:relative;overflow:hidden;"><img src="assets/img/case-building.webp" alt="원상복구 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+          <div style="padding:24px 24px 28px;">
+            <p style="margin:0 0 12px;display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;color:#242EBF;background:rgba(36,46,191,0.08);border-radius:6px;padding:5px 10px;">BUILDING</p>
+            <h3 style="margin:0 0 10px;font-size:17.5px;font-weight:800;color:#0A0A0D;">건물 원상복구 공사</h3>
+            <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(10,10,13,0.6);font-weight:500;">임대차 종료 일정에 맞춘 철거와 마감 복원. 재입주 사이의 공백을 최소화합니다.</p>
+          </div>
+        </div>
+        <div data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="width:100%;height:240px;"><div style="width:100%;height:100%;position:relative;overflow:hidden;"><img src="assets/img/svc-07.webp" alt="시설 점검 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+          <div style="padding:24px 24px 28px;">
+            <p style="margin:0 0 12px;display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;color:#242EBF;background:rgba(36,46,191,0.08);border-radius:6px;padding:5px 10px;">INSPECTION</p>
+            <h3 style="margin:0 0 10px;font-size:17.5px;font-weight:800;color:#0A0A0D;">인테리어 시설 점검</h3>
+            <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(10,10,13,0.6);font-weight:500;">시설 점검 후 시설 상태 보고서를 제공합니다. 보수 우선순위와 예산 계획의 근거가 됩니다.</p>
+          </div>
+        </div>
+        <div data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="width:100%;height:240px;"><div style="width:100%;height:100%;position:relative;overflow:hidden;"><img src="assets/img/case-hardware.webp" alt="하드웨어 교체·복원 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+          <div style="padding:24px 24px 28px;">
+            <p style="margin:0 0 12px;display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;color:#242EBF;background:rgba(36,46,191,0.08);border-radius:6px;padding:5px 10px;">HARDWARE</p>
+            <h3 style="margin:0 0 10px;font-size:17.5px;font-weight:800;color:#0A0A0D;">하드웨어 교체·마감재 복원공사</h3>
+            <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(10,10,13,0.6);font-weight:500;">도어·힌지 등 하드웨어 교체와 손상 마감재 부분 복원으로, 전체 교체 없이 컨디션을 되돌립니다.</p>
+          </div>
+        </div>
+        <div data-reveal="" data-reveal-delay="200" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="width:100%;height:240px;"><div style="width:100%;height:100%;position:relative;overflow:hidden;"><img src="assets/img/case-coliving.webp" alt="코워킹·코리빙 개선 현장 사진" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div></div>
+          <div style="padding:24px 24px 28px;">
+            <p style="margin:0 0 12px;display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.08em;color:#242EBF;background:rgba(36,46,191,0.08);border-radius:6px;padding:5px 10px;">CO-WORKING · CO-LIVING</p>
+            <h3 style="margin:0 0 10px;font-size:17.5px;font-weight:800;color:#0A0A0D;">코워킹·코리빙 개선공사</h3>
+            <p style="margin:0;font-size:14px;line-height:1.7;color:rgba(10,10,13,0.6);font-weight:500;">운영 중인 공간에서 입주율에 영향 없이 시공합니다. 공용부와 유닛을 구역별로 개선합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. REVIEWS ============ -->
+  <section data-screen-label="고객 후기" style="background:#F1F1F4;padding:0 0 clamp(80px,11vw,150px);">
+    <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px);box-sizing:border-box;">
+      <p data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.14em;color:#242EBF;font-weight:600;">06 — CLIENTS SAY</p>
+      <h2 data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 clamp(40px,6vw,64px);font-size:clamp(26px,4.2vw,46px);line-height:1.28;font-weight:900;letter-spacing:-0.02em;color:#0A0A0D;">함께 일한 담당자들의 말</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;">
+        <figure data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0;background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;">
+          <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:26px;color:#242EBF;line-height:1;">“</span>
+          <blockquote style="margin:0;font-size:15px;line-height:1.8;color:#0A0A0D;font-weight:600;flex:1;">환경개선공사는 늘 변수가 생기기 마련인데, 대표님이 현장을 직접 관리하니 진단과 대응이 빠릅니다.</blockquote>
+          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.06em;color:rgba(10,10,13,0.45);">공유오피스 시공팀 매니저</figcaption>
+        </figure>
+        <figure data-reveal="" data-reveal-delay="130" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0;background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;">
+          <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:26px;color:#242EBF;line-height:1;">“</span>
+          <blockquote style="margin:0;font-size:15px;line-height:1.8;color:#0A0A0D;font-weight:600;flex:1;">운영 중인 공간의 보수공사는 현장 관리와 애티튜드가 중요한데, 리커픽스 직영팀은 전부 애티튜드가 좋아요.</blockquote>
+          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.06em;color:rgba(10,10,13,0.45);">공유오피스 운영팀장</figcaption>
+        </figure>
+        <figure data-reveal="" data-reveal-delay="260" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0;background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;">
+          <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:26px;color:#242EBF;line-height:1;">“</span>
+          <blockquote style="margin:0;font-size:15px;line-height:1.8;color:#0A0A0D;font-weight:600;flex:1;">견적서 항목이 투명하게 보여서 내부 보고가 쉬웠어요. 공사 중 불필요한 추가 비용 얘기가 한 번도 없었습니다.</blockquote>
+          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.06em;color:rgba(10,10,13,0.45);">코리빙 시설매니저</figcaption>
+        </figure>
+        <figure data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0;background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;">
+          <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:26px;color:#242EBF;line-height:1;">“</span>
+          <blockquote style="margin:0;font-size:15px;line-height:1.8;color:#0A0A0D;font-weight:600;flex:1;">작은 보수로 시작했는데 지금은 층 공사까지 맡깁니다. 완료보고서 덕분에 히스토리 관리가 편해요.</blockquote>
+          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.06em;color:rgba(10,10,13,0.45);">지식산업센터 관리소장</figcaption>
+        </figure>
+        <figure data-reveal="" data-reveal-delay="130" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0;background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;">
+          <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:26px;color:#242EBF;line-height:1;">“</span>
+          <blockquote style="margin:0;font-size:15px;line-height:1.8;color:#0A0A0D;font-weight:600;flex:1;">접수하면 대표님이 직접 현장에 와서 꼼꼼히 보고 진단해주세요. 소통이 잘 돼서 믿고 맡깁니다.</blockquote>
+          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.06em;color:rgba(10,10,13,0.45);">IT기업 인사팀 매니저</figcaption>
+        </figure>
+        <figure data-reveal="" data-reveal-delay="260" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0;background:#FFFFFF;border:1px solid rgba(10,10,13,0.08);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;">
+          <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:26px;color:#242EBF;line-height:1;">“</span>
+          <blockquote style="margin:0;font-size:15px;line-height:1.8;color:#0A0A0D;font-weight:600;flex:1;">매년 수선비 계획의 우선순위와 비용 책정이 막막했는데, 컨설팅 덕분에 비용 대비 효용이 높은 항목부터 추릴 수 있었어요.</blockquote>
+          <figcaption style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;letter-spacing:0.06em;color:rgba(10,10,13,0.45);">프랜차이즈 총무 매니저</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. CTA + FOOTER ============ -->
+  <section id="contact" data-screen-label="CTA 및 푸터" style="background:#0A0A0D;padding:clamp(80px,11vw,150px) 0 0;">
+    <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px);box-sizing:border-box;">
+      <p data-reveal="" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 16px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;letter-spacing:0.14em;color:#8B93FF;font-weight:600;">07 — CONTACT</p>
+      <h2 data-reveal="" data-reveal-delay="100" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);margin:0 0 40px;font-size:clamp(30px,5.4vw,60px);line-height:1.24;font-weight:900;letter-spacing:-0.02em;color:#F1F1F4;text-wrap:balance;">공간을 함께 돌보는<br>파트너, 리커픽스</h2>
+      <div data-reveal="" data-reveal-delay="200" style="opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:clamp(48px,7vw,80px);">
+        <button onclick="rcfModal(true)" style="display:inline-flex;align-items:center;gap:14px;background:#242EBF;color:#FFFFFF;font-weight:800;font-size:clamp(16px,1.9vw,19px);padding:20px 40px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;transition:background .2s;" data-rcf-hover class="rcf-h5"><span>서비스 문의하기</span><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:15px;opacity:0.75;">→</span></button>
+        <p style="margin:0;font-size:13px;color:rgba(241,241,244,0.45);font-weight:500;">유지보수부터 인테리어, 시설운영 컨설팅까지 — 든든한 파트너가 되겠습니다.</p>
+      </div>
+    </div>
+    <footer style="border-top:1px solid rgba(241,241,244,0.1);">
+      <div style="max-width:1160px;margin:0 auto;padding:56px clamp(20px,4vw,48px) 28px;box-sizing:border-box;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px clamp(32px,6vw,96px);margin-bottom:48px;">
+          <div>
+            <img src="assets/logo-white.png" alt="RECURFIX" style="height:16px;width:auto;opacity:0.92;margin-bottom:18px;">
+            <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;line-height:2;color:rgba(241,241,244,0.45);">Interior · Maintenance · PM<br>Corporate Space Solutions</p>
+          </div>
+          <div style="display:flex;flex-direction:column;">
+            <div style="display:flex;align-items:baseline;gap:20px;padding:12px 0;border-bottom:1px solid rgba(241,241,244,0.08);">
+              <span style="flex:none;width:110px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.14em;color:rgba(241,241,244,0.35);">CEO</span>
+              <span style="font-size:13px;color:rgba(241,241,244,0.8);font-weight:700;">고성준</span>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:20px;padding:12px 0;border-bottom:1px solid rgba(241,241,244,0.08);">
+              <span style="flex:none;width:110px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.14em;color:rgba(241,241,244,0.35);">BIZ LICENSE</span>
+              <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;color:rgba(241,241,244,0.8);font-weight:600;">208-22-27662</span>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:20px;padding:12px 0;border-bottom:1px solid rgba(241,241,244,0.08);">
+              <span style="flex:none;width:110px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.14em;color:rgba(241,241,244,0.35);">TEL</span>
+              <a href="tel:010-7540-6658" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;color:rgba(241,241,244,0.8);font-weight:600;" data-rcf-hover class="rcf-h6">010-7540-6658</a>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:20px;padding:12px 0;border-bottom:1px solid rgba(241,241,244,0.08);">
+              <span style="flex:none;width:110px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.14em;color:rgba(241,241,244,0.35);">CONTACT</span>
+              <a href="mailto:sjun@recurfix.co.kr" style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;color:rgba(241,241,244,0.8);font-weight:600;" data-rcf-hover class="rcf-h7">sjun@recurfix.co.kr</a>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:20px;padding:12px 0;">
+              <span style="flex:none;width:110px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.14em;color:rgba(241,241,244,0.35);">ADDRESS</span>
+              <span style="font-size:13px;line-height:1.7;color:rgba(241,241,244,0.8);font-weight:500;">경기 하남시 미사강변한강로 299, 6층 603호</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(241,241,244,0.08);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;">
+          <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.06em;color:rgba(241,241,244,0.35);">RECURFIX — 공간관리 파트너</p>
+          <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.04em;color:rgba(241,241,244,0.35);">© 2026 RECURFIX. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- ============ FLOATING CTA ============ -->
+  
+    <button onclick="rcfModal(true)" aria-label="서비스 문의" style="position:fixed;right:20px;bottom:20px;z-index:90;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:64px;height:64px;border-radius:50%;background:#242EBF;color:#FFFFFF;border:none;cursor:pointer;font-family:inherit;box-shadow:0 8px 24px rgba(36,46,191,0.4);transition:transform .2s,background .2s;" data-rcf-hover class="rcf-h8">
+      <span style="font-size:11px;font-weight:800;letter-spacing:0.02em;">문의</span>
+      <span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:9px;opacity:0.8;">ASK</span>
+    </button>
+  
+
+  <!-- ============ INQUIRY MODAL ============ -->
+  <div id="rcf-modal" style="display:none;">
+    <div data-screen-label="문의 모달" style="position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;">
+      <div onclick="rcfModal(false)" style="position:absolute;inset:0;background:rgba(10,10,13,0.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);"></div>
+      <div style="position:relative;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;background:#111116;border:1px solid rgba(241,241,244,0.12);border-radius:16px;box-sizing:border-box;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:#242EBF;padding:14px 24px;">
+          <p style="margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.16em;color:rgba(255,255,255,0.85);">PARTNER CONNECT — RCF INQUIRY</p>
+          <button onclick="rcfModal(false)" aria-label="닫기" style="background:none;border:none;color:rgba(255,255,255,0.8);font-size:17px;cursor:pointer;line-height:1;padding:2px;" data-rcf-hover class="rcf-h9">✕</button>
+        </div>
+        <div style="padding:34px 32px 32px;">
+          <h3 style="margin:0 0 10px;font-size:25px;font-weight:900;color:#F1F1F4;line-height:1.35;letter-spacing:-0.01em;">곁에 둘 파트너와<br>첫 대화를 시작해보세요</h3>
+          <p style="margin:0 0 30px;font-size:13.5px;color:rgba(241,241,244,0.55);font-weight:500;">작은 보수 상담도 좋습니다. 담당자가 1영업일 내로 연락드립니다.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0 24px;">
+            <div>
+              <label style="display:block;margin:0 0 6px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:rgba(241,241,244,0.5);font-weight:600;">성함 <span style="color:#8B93FF;">*</span></label>
+              <input type="text" data-inq="name" placeholder="성함" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(241,241,244,0.3);color:#F1F1F4;padding:10px 2px;font-size:15px;font-family:inherit;font-weight:600;border-radius:0;margin-bottom:24px;outline:none;" style-focus="border-bottom-color:#8B93FF;">
+            </div>
+            <div>
+              <label style="display:block;margin:0 0 6px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:rgba(241,241,244,0.5);font-weight:600;">회사명 <span style="color:#8B93FF;">*</span></label>
+              <input type="text" data-inq="company" placeholder="회사명" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(241,241,244,0.3);color:#F1F1F4;padding:10px 2px;font-size:15px;font-family:inherit;font-weight:600;border-radius:0;margin-bottom:24px;outline:none;" style-focus="border-bottom-color:#8B93FF;">
+            </div>
+            <div>
+              <label style="display:block;margin:0 0 6px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:rgba(241,241,244,0.5);font-weight:600;">연락처 <span style="color:#8B93FF;">*</span></label>
+              <input type="tel" data-inq="phone" placeholder="010-0000-0000" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(241,241,244,0.3);color:#F1F1F4;padding:10px 2px;font-size:15px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:500;border-radius:0;margin-bottom:24px;outline:none;" style-focus="border-bottom-color:#8B93FF;">
+            </div>
+            <div>
+              <label style="display:block;margin:0 0 6px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:rgba(241,241,244,0.5);font-weight:600;">메일</label>
+              <input type="email" data-inq="email" placeholder="업무용 메일 주소" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(241,241,244,0.3);color:#F1F1F4;padding:10px 2px;font-size:15px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:500;border-radius:0;margin-bottom:24px;outline:none;" style-focus="border-bottom-color:#8B93FF;">
+            </div>
+          </div>
+          <label style="display:block;margin:0 0 6px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0.12em;color:rgba(241,241,244,0.5);font-weight:600;">어떤 공간 고민이 있으신가요?</label>
+          <textarea data-inq="message" rows="3" placeholder="공간 위치, 상황, 희망 일정 등을 편하게 적어주세요" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(241,241,244,0.3);color:#F1F1F4;padding:10px 2px;font-size:15px;font-family:inherit;font-weight:600;line-height:1.6;border-radius:0;margin-bottom:22px;outline:none;resize:vertical;" style-focus="border-bottom-color:#8B93FF;"></textarea>
+          <label style="display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.6;color:rgba(241,241,244,0.6);margin:0 0 26px;cursor:pointer;font-weight:500;">
+            <input type="checkbox" data-inq="consent" style="margin:3px 0 0;accent-color:#242EBF;flex:none;">
+            <span><span style="color:#8B93FF;font-weight:700;">필수</span> 개인정보 수집 및 이용 동의 — 문의 응대 목적으로만 사용됩니다.</span>
+          </label>
+          <button onclick="rcfSubmit()" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:#242EBF;color:#FFFFFF;border:none;padding:17px 22px;font-size:15px;font-weight:800;font-family:inherit;cursor:pointer;border-radius:0;transition:background .2s;" data-rcf-hover class="rcf-h10"><span>파트너 연결 요청</span><span style="font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:14px;opacity:0.7;">→</span></button>
+          <p style="margin:12px 0 0;font-size:11px;color:rgba(241,241,244,0.4);text-align:center;font-family:'IBM Plex Mono',ui-monospace,monospace;letter-spacing:0.04em;">제출 시 메일 앱을 통해 접수됩니다</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // reveal on scroll
+  var reveals = document.querySelectorAll('[data-reveal]');
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; });
+  } else {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting) {
+          var el = e.target, d = el.getAttribute('data-reveal-delay');
+          if (d) el.style.transitionDelay = d + 'ms';
+          el.style.opacity = '1'; el.style.transform = 'none';
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+  // counters
+  function runCounter(el){
+    var target = parseFloat(el.getAttribute('data-count')), dur = 1400, start = performance.now();
+    function tick(now){
+      var p = Math.min(1, (now - start) / dur), eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString('en-US');
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if (reduce || !('IntersectionObserver' in window)) {
+    counters.forEach(function(el){ el.textContent = parseFloat(el.getAttribute('data-count')).toLocaleString('en-US'); });
+  } else {
+    var io2 = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { runCounter(e.target); io2.unobserve(e.target); } });
+    }, { threshold: 0.6 });
+    counters.forEach(function(el){ io2.observe(el); });
+  }
+  // custom-framed images: replicate design-tool crop (base cover x scale, % offsets)
+  document.querySelectorAll('img[data-rcf-view]').forEach(function(img){
+    function apply(){
+      var f = img.parentElement, fw = f.clientWidth, fh = f.clientHeight;
+      var iw = img.naturalWidth, ih = img.naturalHeight;
+      if (!fw || !fh || !iw || !ih) return;
+      var s = parseFloat(img.dataset.s) || 1;
+      var base = Math.max(fw / iw, fh / ih), k = base * s;
+      img.style.width = (iw * k / fw * 100) + '%';
+      img.style.height = (ih * k / fh * 100) + '%';
+      img.style.objectFit = '';
+      img.style.inset = 'auto';
+      img.style.left = (50 + (parseFloat(img.dataset.x) || 0)) + '%';
+      img.style.top = (50 + (parseFloat(img.dataset.y) || 0)) + '%';
+    }
+    if (img.complete && img.naturalWidth) apply(); else img.addEventListener('load', apply);
+    window.addEventListener('resize', apply, { passive: true });
+  });
+})();
+function rcfModal(open){
+  var m = document.getElementById('rcf-modal');
+  if (m) m.style.display = open ? '' : 'none';
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') rcfModal(false); });
+function rcfSubmit(){
+  function get(k){
+    var el = document.querySelector('[data-inq="' + k + '"]');
+    return el ? (el.type === 'checkbox' ? el.checked : el.value.trim()) : '';
+  }
+  var name = get('name'), company = get('company'), phone = get('phone');
+  var email = get('email'), message = get('message'), consent = get('consent');
+  if (!name || !company || !phone) { alert('성함, 회사명, 연락처는 필수 입력 항목입니다.'); return; }
+  if (!consent) { alert('개인정보 수집 및 이용에 동의해주세요.'); return; }
+  var subject = '[서비스 문의] ' + company + ' ' + name;
+  var body = '성함 : ' + name + '\n회사명 : ' + company + '\n연락처 : ' + phone + '\n메일 : ' + (email || '-') + '\n\n문의 내용 :\n' + (message || '-') + '\n\n(개인정보 수집 및 이용 동의함)';
+  window.location.href = 'mailto:sjun@recurfix.co.kr?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  rcfModal(false);
+}
+</script>
+
+</body>
+</html>
